@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  backend:
+    build:
+      context: ./backend/
+    image: "node:8"
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+  frontend:
+    build:
+      context: ./frontend/
+    image: "nginx"
+    ports:
+      - "80:80"
